@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock Paper Scissors</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script src="./js/javascript.js"></script>
+    <div class="score">
+      <h1 class="ties">Ties: 0</h1>
+    </div>
+    <div class="winnerDiv">
+      <h1 class="winner"></h1>
+      <button class="reset" onclick="resetGame()">Play Again?</button>
+    </div>
+    <div class="playerSection">
+      <h3 class="playerChoice"></h3>
+      <h3 class="playerScore"></h3>
+      <div class="playerImg">
+        <img src="./img/rock" alt="Rock" class="pImg" id="Rocks" />
+        <img src="./img/paper" alt="Paper" class="pImg" id="Paper" />
+        <img src="./img/scissors" alt="Scissors" class="pImg" id="Scissors" />
+      </div>
+    </div>
+  </body>
+</html>

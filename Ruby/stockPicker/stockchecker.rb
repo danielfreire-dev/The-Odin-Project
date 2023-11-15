@@ -1,7 +1,7 @@
 def stock_picker(prices)
   buy = 0
   sell = 0
-  profit = 0  
+  profit = 0
   prices.each_with_index do |buy_price, buy_day|
     prices.each_with_index do |sell_price, sell_day|
       if sell_day > buy_day

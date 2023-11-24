@@ -3,15 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="container">
       <div class="logo-container">
-        <div.logo></div.logo>
+        <div class="logo">
+          <img src="odin-lined.png" alt="odin-logo" />
+          <h1>ODIN</h1>
+        </div>
+        <div class="attribution">
+          Photo by
+          <a
+            href="https://unsplash.com/@haliewestphoto?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Halie West</a
+          >
+          on
+          <a
+            href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+            >Unsplash</a
+          >
+        </div>
       </div>
       <div class="form-container">
-        <div class="form"></div>
+        <p>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. <br />
+          Sign up <em>now</em> to get started.
+        </p>
+        <p>You <em>know</em> you want to.</p>
+        <form action="/my-handling-form-page" method="post">
+          <h2>Let's do this!</h2>
+          <div class="box">
+            <div class="input">
+              <label for="first-name">First Name<input type="text" /></label>
+            </div>
+            <div class="input">
+              <label for="last-name">Last Name<input type="text" /></label>
+            </div>
+          </div>
+          <div class="box">
+            <div class="input">
+              <label for="Email">Email<input type="email" /></label>
+            </div>
+            <div class="input">
+              <label for="phone-number">Phone Number<input type="tel" /></label>
+            </div>
+          </div>
+          <div class="box">
+            <div class="input">
+              <label for="Password">Password<input type="password" /></label>
+            </div>
+            <div class="input">
+              <label for="Password"
+                >Confirm Password<input type="password"
+              /></label>
+            </div>
+          </div>
+        </form>
+        <div class="finish"></div>
       </div>
     </div>
   </body>

@@ -33,36 +33,48 @@
           Sign up <em>now</em> to get started.
         </p>
         <p>You <em>know</em> you want to.</p>
+
         <form action="/my-handling-form-page" method="post">
-          <h2>Let's do this!</h2>
-          <div class="box">
-            <div class="input">
-              <label for="first-name">First Name<input type="text" /></label>
-            </div>
-            <div class="input">
-              <label for="last-name">Last Name<input type="text" /></label>
-            </div>
+          <div class="form-box">
+            <h2>Let's do this!</h2>
+            <table>
+              <tr class="box">
+                <td class="input">
+                  <label for="first-name">first name</label>
+                  <input type="text" pattern="^[^0-9]+$" />
+                </td>
+                <td class="input">
+                  <label for="last-name">last name</label>
+                  <input type="text" />
+                </td>
+              </tr>
+              <tr class="box">
+                <td class="input">
+                  <label for="Email">email</label>
+                  <input type="email" />
+                </td>
+                <td class="input">
+                  <label for="phone-number">phone number</label>
+                  <input type="tel" min="9" />
+                </td>
+              </tr>
+              <tr class="box">
+                <td class="input">
+                  <label for="Password">password</label>
+                  <input type="password" class="error" min="1" max="100" />
+                </td>
+                <td class="input">
+                  <label for="Password">confirm password</label>
+                  <input type="password" class="error" min="6" max="100" />
+                </td>
+              </tr>
+            </table>
           </div>
-          <div class="box">
-            <div class="input">
-              <label for="Email">Email<input type="email" /></label>
-            </div>
-            <div class="input">
-              <label for="phone-number">Phone Number<input type="tel" /></label>
-            </div>
-          </div>
-          <div class="box">
-            <div class="input">
-              <label for="Password">Password<input type="password" /></label>
-            </div>
-            <div class="input">
-              <label for="Password"
-                >Confirm Password<input type="password"
-              /></label>
-            </div>
-          </div>
+          <button type="submit">Create Account</button>
+          <p>Already have an account? <a href="#">Log in</a></p>
         </form>
-        <div class="finish"></div>
+
+        <!-- <div class="finish"></div> -->
       </div>
     </div>
   </body>

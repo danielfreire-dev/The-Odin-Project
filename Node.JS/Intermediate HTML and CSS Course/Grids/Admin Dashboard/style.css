@@ -19,6 +19,16 @@ li {
   background-color: #3b82f6;
   grid-row: 1/3;
   display: grid;
+  color: whitesmoke;
+}
+.sidebar li {
+  display: flex;
+}
+.sidebar-icons {
+  fill: #f9fafb;
+  fill-opacity: 100%;
+  height: 20px;
+  padding-right: 10px;
 }
 .header {
   background-color: #f9fafb;

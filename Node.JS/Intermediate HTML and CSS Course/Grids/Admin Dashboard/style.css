@@ -30,6 +30,9 @@ li {
   height: 20px;
   padding-right: 10px;
 }
+.brand {
+  display: flex;
+}
 .header {
   background-color: #f9fafb;
   display: grid;
@@ -78,6 +81,12 @@ li {
   border-left: 7px solid orange;
 }
 .auxiliary {
+  background-color: #f9fafb;
+  border-radius: 10px;
+  padding: 15px;
+}
+.auxiliary-users .aux-card {
+  display: flex;
   background-color: #f9fafb;
   border-radius: 10px;
   padding: 15px;

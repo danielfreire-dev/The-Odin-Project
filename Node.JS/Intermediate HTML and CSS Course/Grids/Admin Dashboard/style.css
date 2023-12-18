@@ -20,18 +20,31 @@ li {
   grid-row: 1/3;
   display: grid;
   color: whitesmoke;
+
+  font-weight: 600;
 }
 .sidebar li {
   display: flex;
+  font-size: 30px;
 }
+
 .sidebar-icons {
   fill: #f9fafb;
   fill-opacity: 100%;
-  height: 20px;
-  padding-right: 10px;
+  height: 30px;
+  padding-right: 15px;
 }
+
 .brand {
+}
+.brand-box {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  height: 50px;
 }
 .header {
   background-color: #f9fafb;
@@ -44,7 +57,7 @@ li {
 .projects-container {
   background-color: #e5e7eb;
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1.5fr;
   grid-template-rows: 2em 500px;
   gap: 17px;
   padding: 20px;
@@ -80,17 +93,36 @@ li {
   border-radius: 10px;
   padding: 10px;
   border-left: 7px solid orange;
+  box-shadow: 2px 2px lightgrey;
 }
 .auxiliary {
   background-color: #f9fafb;
   border-radius: 10px;
   padding: 15px;
+  box-shadow: 2px 2px lightgrey;
+}
+.aux-card img {
+  padding-right: 15px;
+}
+.aux-card h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.aux-card p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .auxiliary-users .aux-card {
   display: flex;
   background-color: #f9fafb;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  box-shadow: 2px 2px lightgrey;
 }
 hr {
   border: 1px solid #e5e7eb;
@@ -100,6 +132,14 @@ hr {
 }
 .user-icon {
   height: 40px;
+}
+.icons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.icon {
+  height: 20px;
+  padding-right: 15px;
 }
 .search-bar {
   margin-left: 5px;

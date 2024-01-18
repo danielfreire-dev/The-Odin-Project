@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+
+    -->
+    <link rel="stylesheet" href="./Bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="./style.css" />
+    -->
+    <script src="/app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="nav-bar">
+        <h1>The Library</h1>
+        <div class="liblog"></div>
+      </div>
+      <div class="filters"></div>
+      <div class="library">
+        <p>Dark mode:</p>
+        <button class="dark-light"></button>
+        <div class="book"></div>
+      </div>
+      <div class="book-form">
+        <!-- Add modal class / Add form element-->
+        <legend>Add New Book</legend>
+        <form id="newBookForm">
+          <input type="text" id="bookTitle" placeholder="Book Title" />
+          <input type="text" id="bookAuthor" placeholder="Book Author" />
+          <input type="text" id="bookPages" placeholder="Book Pages" />
+          <fieldset>
+            <label for="bookRead">Have you read it?</label>
+            <input
+              type="radio"
+              name="bookRead"
+              id="bookRead"
+              placeholder="Book Title"
+            />
+            <label for="bookRead" id="bookReadYes">Yes</label>
+            <input
+              type="radio"
+              name="bookRead"
+              id="bookRead"
+              placeholder="Book Title"
+            />
+            <label for="bookRead" id="bookReadNo">No</label>
+          </fieldset>
+          <button id="newBookSubmit"></button>
+        </form>
+      </div>
+    </header>
+    <main>
+      <h2>Them Books</h2>
+      <div id="Library"></div>
+    </main>
+  </body>
+</html>

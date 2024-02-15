@@ -1,1 +1,35 @@
- 
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+}
+table {
+  display: inline-table;
+  border-collapse: collapse;
+  margin: 1em;
+  border: solid 5px transparent;
+}
+table th,
+table td {
+  border: solid 3px black;
+  padding: 1.5em 3em;
+}
+tr td {
+  color: rgba(34, 12, 64, 0.3);
+}
+.gameboard {
+  display: flex;
+  flex-direction: column;
+}
+.endGame {
+  display: flex;
+  flex-direction: column;
+}
+.endGame button {
+  margin-left: auto;
+  margin-right: auto;
+}

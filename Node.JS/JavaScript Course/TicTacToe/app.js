@@ -16,81 +16,68 @@
     4.1.2 Count ties (only show if happened)
   4.2 Propose new match
 */
-window.addEventListener("load", () => {
-  //window.onload = function () {
-    let gameboard = document.querySelector("#gameboard");
-    //Ask players for their name
-    let namep1 = document.getElementById("player1Name").value;
-  let namep2 = document.getElementById("player2Name").value;
-  window.addEventListener() // add keystrokes and/or mouseclick
-    document.getElementById("player1").textContent = namep1;
+window.onload = function () {
+  let gameboard = document.querySelector("#gameboard");
 
-    document.getElementById("player2").textContent = namep2;
+  //Ask players for their name
+  let namep1 = "Super Player 1";
+  let namep2 = "Super Player 2";
 
-    //Game Board
-    /* function gameboard(namep1, namep2) {
-      this.gameboard = [
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-      ];
-      return { player1, player2, gameboard };
-    } */
-    //Turn Counter
-    function turnCount(turn) {
-      turn = 0;
+  document.getElementById("p1Name").addEventListener(
+    "click",
+    function (event) {
+      event.preventDefault();
+      let namep1 = "";
+      namep1 = document.querySelector("#player1Name").value;
+      //alert(namep1 + " is the one");
+      document.getElementById("player1").textContent = namep1;
+      document.querySelector("#player1Name").value = "";
+    },
+    false
+  );
 
-      let e,
-        squares = document.getElementsByTagName("td");
-      for (e in squares) {
-        if (squares.hasOwnProperty(e)) {
-          squares.onClick = function () {
-            if (namep1 == "" || namep2 == "") {
-              alert("Introduce players names!");
+  //function player1save(namep1) {}
+  document.getElementById("p2Name").addEventListener("click", function (event) {
+    namep2 = document.getElementById("player2Name").value;
+    //alert(namep2 + " is the two");
+    document.getElementById("player2").innerHTML = namep2;
+    document.querySelector("#player2Name").value = "";
+    event.preventDefault();
+  });
+
+  document.getElementById("player1").innerHTML = namep1;
+  document.getElementById("player2").innerHTML = namep2;
+};
+/* window.addEventListener(); */ // add keystrokes and/or mouseclick
+/* document.getElementById("player1").textContent = namep1;
+
+document.getElementById("player2").textContent = namep2; */
+//};
+
+//Turn Counter
+/* function turnCount(turn) {
+    turn = 0;
+
+    let e,
+      squares = document.getElementsByTagName("td");
+    for (e in squares) {
+      if (squares.hasOwnProperty(e)) {
+        squares.onClick = function () {
+          if (namep1 == "" || namep2 == "") {
+            alert("Introduce players names!");
+            turn++;
+          }
+          while (turn <= 9) {
+            if (turn % 2 != 0) {
+              squares.innerText = "O";
+
+              turn++;
+            } else {
+              squares.innerText = "X";
               turn++;
             }
-            while (turn <= 9) {
-              if (turn % 2 != 0) {
-                squares.innerText = "O";
-
-                turn++;
-              } else {
-                squares.innerText = "X";
-                turn++;
-              }
-            }
-          };
-        }
-      }
-    }
-    /* for (turn = 0; turn <= 9; turn++) {
-      return turn;
-      } */
-
-    /*
-    function playerturn(turn) {
-      turn = 0
-      if turn%2!=0 OR (turn = 0) {
-        player1
-      } else {
-        player2
-      }
-    } */
-    console.log(gameboard("namep1", "namep2"));
-
-    /* function game {
-
-      if //winner
-        {
-        alert " Congratulations! Winner is $winner"
-      } else if (turnCount < 10)
-      {
-        alert "Game Over! It's a tie."
-      } else {
-        playGame
-      }
-    }
-    function nextMove() { }
-    function checkWin() { } */
-  };
-});
+          }
+        };
+      };
+    };
+  }; */

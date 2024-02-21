@@ -35,7 +35,7 @@ window.onload = function () {
       namep1 = document.querySelector("#player1Name").value;
       //alert(namep1 + " is the one");
       document.getElementById("player1").textContent = namep1;
-      document.querySelector("#player1Name").value = "";
+      namep1 = "";
     },
     false
   );
@@ -105,19 +105,23 @@ window.onload = function () {
   for (let j = 0; j < gameCell.length; j++) {
     gameCell[j].addEventListener("click", function (event) {
       event.preventDefault();
-      isWin();
+      //isWin();
       isTie(i);
       cellTaken(event);
       whichPlayer(i);
       i++;
-      console.log(i);
+      //console.log(i);
+
       return;
     });
   }
 
   function isWin() {
     //row equal
-    for (let a = 0; a <= 3; a++) {}
+    for (let a = 0; a <= 3; a++) {
+      let row0 = document.querySelectorAll(".r0")[a].textContent; //should create NodeList
+      console.log(row0);
+    }
     //column equal
     //diagonal
   }

@@ -2,14 +2,14 @@
 1.Create Gameboard
   1.1 Add players *
   1.2 Add board *
-2. Start game
+2. Start game *
 3. Play game
   3.1 Check for tie (there are no more moves possible)
   3.2 Check for win
   3.4 Play!
-    3.4.1 Ask player for move
+    3.4.1 Ask player for move *
       3.4.1.1 Check if Win
-    3.4.2 Ask next player for move
+    3.4.2 Ask next player for move *
 4. If tie/win => Identify
   4.1 Declare winner
     4.1.1 Count wins for each player
@@ -20,14 +20,18 @@ window.onload = function () {
   let gameboard = document.querySelector("#gameboard");
 
   //Ask players for their name
-  let namep1 = "Super Player 1";
-  let namep2 = "Super Player 2";
+  let namep1 = "Player 1";
+  let namep2 = "Player 2";
+  let yourTurn = "Your move, ";
+  let mark;
+  let gameCell = document.getElementsByClassName("gameCell");
+  let i = 1;
 
   document.getElementById("p1Name").addEventListener(
     "click",
     function (event) {
       event.preventDefault();
-      let namep1 = "";
+      /* let namep1 = ""; */
       namep1 = document.querySelector("#player1Name").value;
       //alert(namep1 + " is the one");
       document.getElementById("player1").textContent = namep1;
@@ -47,37 +51,83 @@ window.onload = function () {
 
   document.getElementById("player1").innerHTML = namep1;
   document.getElementById("player2").innerHTML = namep2;
+  document.getElementById("nextMove").innerHTML = "Let's go!";
+  /*document.getElementById("nextMove").innerHTML = yourTurn + namep1; */
+
+  //Play the Game
+  function turn(i) {
+    if (i <= gameCell.length) {
+      if (i % 2 == 0) {
+        // Player 2 playing
+        //alert("You must state your name!");
+
+        //document.getElementById("nextMove").innerHTML = yourTurn + namep1;
+        mark = "O";
+        //onsole.log("8");
+      } else if (i % 2 != 0) {
+        // Player 1 playing
+        //alert("You must state your name!");
+        //document.getElementById("nextMove").innerHTML = yourTurn + namep2;
+        mark = "X";
+        //;
+      }
+    } else {
+    }
+  }
+  function whichPlayer(i) {
+    if (i < gameCell.length) {
+      if (i % 2 == 0) {
+        // Player 2 playing
+        //alert("You must state your name!");
+
+        document.getElementById("nextMove").innerHTML = yourTurn + namep1;
+      } else if (i % 2 != 0) {
+        // Player 1 playing
+        //alert("You must state your name!");
+        document.getElementById("nextMove").innerHTML = yourTurn + namep2;
+      }
+    } else {
+      return;
+    }
+  }
+  function cellTaken(event) {
+    turn(i);
+
+    if (event.target.innerHTML == "") {
+      event.target.innerHTML = mark;
+      return;
+    } else if (event.target.innerHTML != "") {
+      alert("Too late. Someone got here first! 😛");
+      cellTaken();
+    }
+  }
+
+  for (let j = 0; j < gameCell.length; j++) {
+    gameCell[j].addEventListener("click", function (event) {
+      event.preventDefault();
+      isWin();
+      isTie(i);
+      cellTaken(event);
+      whichPlayer(i);
+      i++;
+      console.log(i);
+      return;
+    });
+  }
+
+  function isWin() {
+    //row equal
+    for (let a = 0; a <= 3; a++) {}
+    //column equal
+    //diagonal
+  }
+
+  function isTie(i) {
+    if (i == 9) {
+      document.getElementById("nextMove").innerHTML = "It's a tie!";
+      document.getElementById("nextMove").style.color = "orange";
+      return;
+    } else {
+    }
+  }
 };
-/* window.addEventListener(); */ // add keystrokes and/or mouseclick
-/* document.getElementById("player1").textContent = namep1;
-
-document.getElementById("player2").textContent = namep2; */
-//};
-
-//Turn Counter
-/* function turnCount(turn) {
-    turn = 0;
-
-    let e,
-      squares = document.getElementsByTagName("td");
-    for (e in squares) {
-      if (squares.hasOwnProperty(e)) {
-        squares.onClick = function () {
-          if (namep1 == "" || namep2 == "") {
-            alert("Introduce players names!");
-            turn++;
-          }
-          while (turn <= 9) {
-            if (turn % 2 != 0) {
-              squares.innerText = "O";
-
-              turn++;
-            } else {
-              squares.innerText = "X";
-              turn++;
-            }
-          }
-        };
-      };
-    };
-  }; */

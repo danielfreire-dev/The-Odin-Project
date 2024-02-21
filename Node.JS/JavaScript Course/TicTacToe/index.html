@@ -8,6 +8,8 @@
   </head>
   <body>
     <h1>Tic Tac Toe</h1>
+    <p id="nextMove"></p>
+
     <div class="container">
       <form id="p1" target="_self">
         <input
@@ -16,31 +18,29 @@
           class="player form"
           placeholder="Player 1"
         />
-        <input type="submit" value="Submit" id="p1Name"></input>
-        <h2 id="player1">Player 1</h2>
+        <input type="submit" value="Submit" id="p1Name" />
+        <h2 id="player1"></h2>
         <h3 class="marker">X</h3>
         <h4>Wins</h4>
         <p class="winsCount"></p>
-        </form>
-
-
+      </form>
 
       <div id="gameboard">
         <table>
           <tr>
-            <td id="00"></td>
-            <td id="01"></td>
-            <td id="02"></td>
+            <td class="gameCell 0 A"></td>
+            <td class="gameCell 0 B"></td>
+            <td class="gameCell 0 C"></td>
           </tr>
           <tr>
-            <td id="10"></td>
-            <td id="11"></td>
-            <td id="12"></td>
+            <td class="gameCell 1 A"></td>
+            <td class="gameCell 1 B"></td>
+            <td class="gameCell 1 C"></td>
           </tr>
           <tr>
-            <td id="20"></td>
-            <td id="21"></td>
-            <td id="22"></td>
+            <td class="gameCell 2 A"></td>
+            <td class="gameCell 2 B"></td>
+            <td class="gameCell 2 C"></td>
           </tr>
         </table>
         <div class="endGame">

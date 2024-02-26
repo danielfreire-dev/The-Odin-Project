@@ -28,6 +28,7 @@ window.onload = function () {
   let gameCell = document.getElementsByClassName("gameCell");
   let i = 1;
   let wins = " Wins";
+  let isWon = false;
 
   document.getElementById("p1Name").addEventListener(
     "click",
@@ -94,7 +95,9 @@ window.onload = function () {
   }
   function cellTaken(event) {
     turn(i);
-
+    if (isWon == true) {
+      mark = "";
+    }
     if (event.target.innerHTML == "") {
       event.target.innerHTML = mark;
       return;
@@ -107,22 +110,14 @@ window.onload = function () {
   for (let j = 0; j < gameCell.length; j++) {
     gameCell[j].addEventListener("click", function (event) {
       event.preventDefault();
-      gameboard();
       isTie(i);
-
       cellTaken(event);
+      gameboard();
       whichPlayer(i);
       isWin(event);
+
       i++;
-
-      /* console.log(
-        gameboardArray[0][0] == "X" &&
-          gameboardArray[1][1] == "X" &&
-          gameboardArray[2][2]
-      ) == "X"; */
-
-      return;
-    });
+    }); //return;;
   }
   function gameboard() {
     //Create gameboard array
@@ -167,7 +162,8 @@ window.onload = function () {
           document.getElementById("nextMove").textContent = namep1 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         } else if (
           (gameboardArray[c][0] == "O" &&
             gameboardArray[c][1] == "O" &&
@@ -176,7 +172,8 @@ window.onload = function () {
           document.getElementById("nextMove").innerHTML = namep2 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         }
         //column equal
         else if (
@@ -187,7 +184,8 @@ window.onload = function () {
           document.getElementById("nextMove").textContent = namep1 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         } else if (
           (gameboardArray[0][d] == "O" &&
             gameboardArray[1][d] == "O" &&
@@ -196,7 +194,8 @@ window.onload = function () {
           document.getElementById("nextMove").innerHTML = namep2 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         }
         //diagonal
         else if (
@@ -207,7 +206,8 @@ window.onload = function () {
           document.getElementById("nextMove").textContent = namep1 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         } else if (
           (gameboardArray[2][0] == "X" &&
             gameboardArray[1][1] == "X" &&
@@ -216,7 +216,8 @@ window.onload = function () {
           document.getElementById("nextMove").innerHTML = namep1 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         } else if (
           (gameboardArray[0][0] == "O" &&
             gameboardArray[1][1] == "O" &&
@@ -225,7 +226,8 @@ window.onload = function () {
           document.getElementById("nextMove").textContent = namep2 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
+          isWon = true;
+          return;
         } else if (
           (gameboardArray[2][0] == "O" &&
             gameboardArray[1][1] == "O" &&
@@ -234,8 +236,11 @@ window.onload = function () {
           document.getElementById("nextMove").innerHTML = namep2 + wins;
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
-          break;
-        }
+          isWon = true;
+          return;
+        } /* else {
+
+        } */
       }
     }
   }
@@ -246,14 +251,6 @@ window.onload = function () {
       document.getElementById("nextMove").style.color = "orange";
       return;
     } else {
-    }
-  }
-  function createRowArray(row) {
-    for (let row = 0; row <= 2; row++) {
-      this["whichRow" + row] = document.querySelectorAll("whichRowClass" + row)[
-        row
-      ].textContent;
-      console.log("whichRow" + row);
     }
   }
 };

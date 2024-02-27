@@ -21,7 +21,10 @@
         <input type="submit" value="Submit" id="p1Name" />
         <h2 id="player1"></h2>
         <h3 class="marker">X</h3>
-        <h4>Wins</h4>
+        <div class="counter">
+          <h4>Wins</h4>
+          <p id="p1counter"></p>
+        </div>
         <p class="winsCount"></p>
       </form>
 
@@ -44,8 +47,8 @@
           </tr>
         </table>
         <div class="endGame">
-          <button>Reset Count</button>
-          <button>Next Game</button>
+          <input type="submit" value="Reset" id="reset" />
+          <input type="submit" value="Next Game" id="nextGame" />
         </div>
       </div>
 
@@ -59,7 +62,10 @@
         <button id="p2Name">Submit</button>
         <h2 id="player2">Player 2</h2>
         <h3 class="marker">O</h3>
-        <h4>Wins</h4>
+        <div class="counter">
+          <h4>Wins</h4>
+          <p id="p2counter"></p>
+        </div>
         <p class="winsCount"></p>
       </form>
     </div>

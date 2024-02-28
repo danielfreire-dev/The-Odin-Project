@@ -96,15 +96,16 @@ window.onload = function () {
   function cellTaken(event) {
     turn(i);
     if (isWon == true) {
-      mark = "";
-    }
-    if (event.target.innerHTML == "") {
-      event.target.innerHTML = mark;
+      //mark = "";
+    } else {
+      if (event.target.innerHTML == "") {
+        event.target.innerHTML = mark;
 
-      return;
-    } else if (event.target.innerHTML != "") {
-      alert("Too late. Someone got here first! 😛");
-      cellTaken();
+        return;
+      } else if (event.target.innerHTML != "") {
+        alert("Too late. Someone got here first! 😛");
+        cellTaken();
+      }
     }
   }
 
@@ -174,6 +175,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p1counter++;
           return;
         } else if (
@@ -185,6 +187,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p2counter++;
           return;
         }
@@ -198,6 +201,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p1counter++;
           return;
         } else if (
@@ -209,6 +213,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p2counter++;
           return;
         }
@@ -222,6 +227,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p1counter++;
           return;
         } else if (
@@ -233,6 +239,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p1counter++;
           return;
         } else if (
@@ -244,6 +251,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p2counter++;
           return;
         } else if (
@@ -255,6 +263,7 @@ window.onload = function () {
           document.getElementById("nextMove").style.color = "green";
           document.getElementById("nextMove").style.fontWeight = "900";
           isWon = true;
+          mark = "";
           p2counter++;
           return;
         }

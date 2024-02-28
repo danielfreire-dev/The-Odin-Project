@@ -23,17 +23,18 @@ tr td {
   /* color: black; */
   font-weight: 900;
 }
-.gameboard {
+.game {
   display: flex;
   flex-direction: column;
 }
 .endGame {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .endGame button {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 #nextMove {
   text-align: center;

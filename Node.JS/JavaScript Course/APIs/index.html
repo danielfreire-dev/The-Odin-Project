@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			#search {
+				margin-bottom: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="search" id="search" placeholder="Search" />
+		<br />
+		<img src="#" />
+		<br />
+		<button>New Image</button>
+		<script>
+			const img = document.querySelector("img");
+			response = fetch(
+				"https://api.giphy.com/v1/gifs/translate?api_key=uYFTYo1LWdpLXnhxf22iLVv1KagW3pI4&s=dogs",
+			);
+			if (response == "") {
+				throw new Error("Network response was not OK");
+			} else {
+				fetch(
+					"https://api.giphy.com/v1/gifs/translate?api_key=uYFTYo1LWdpLXnhxf22iLVv1KagW3pI4&s=dogs",
+					{ mode: "cors" },
+				)
+					.then(function (response) {
+						return response.json();
+						console.log(response.JSON())
+					}).then(function (response) {
+						img.src = response.data.images.original.url;
+					});
+			}
+			const btn = document.querySelector("button");
+			btn.addEventListener("click", () => {
+				console.log("clicked");
+				fetch(
+					"https://api.giphy.com/v1/gifs/translate?api_key=uYFTYo1LWdpLXnhxf22iLVv1KagW3pI4&s=dogs",
+					{ mode: "cors" },
+				)
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (response) {
+						img.src = response.data.images.original.url;
+					});
+			});
+
+			const search = document.querySelector("input");
+			/* if (search.length >= 3) { */
+			search.addEventListener("input", () => {
+				console.log(search.value);
+				console.log(
+					`"https://api.giphy.com/v1/gifs/translate?api_key=uYFTYo1LWdpLXnhxf22iLVv1KagW3pI4&s=" + encodeURIComponent(search.value)`,
+				);
+
+				fetch(
+					"https://api.giphy.com/v1/gifs/translate?api_key=uYFTYo1LWdpLXnhxf22iLVv1KagW3pI4&s=" +
+						encodeURIComponent(search.value),
+					{ mode: "cors" },
+				)
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (response) {
+						img.src = response.data.images.original.url;
+					});
+			});
+		</script>
+	</body>
+</html>

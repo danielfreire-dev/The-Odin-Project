@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Search JS object</title>
+	</head>
+	<body>
+		<script>
+			let nestedObject = {
+				data: {
+					info: {
+						stuff: {
+							thing: {
+								moreStuff: {
+									magicNumber: 44,
+									something: "foo2",
+								},
+							},
+						},
+					},
+				},
+			};
+
+			function contains(object, searchValue) {
+				if (typeof object !== "object" || object === null) {
+					return object === searchValue;
+				}
+
+				for (const value of Object.values(object)) {
+					if (contains(value, searchValue)) {
+						return true;
+					}
+				}
+				return false;
+			}
+		</script>
+	</body>
+</html>

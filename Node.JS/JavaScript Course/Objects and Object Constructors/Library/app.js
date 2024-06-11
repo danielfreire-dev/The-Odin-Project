@@ -22,9 +22,9 @@ function render() {
   for (let i = 0; i < myLibrary.length; i++) {
     //console.log(myLibrary[i]);
     let book = myLibrary[i];
-    let bookEl = document.createElement("div");
-    bookEl.setAttribute("class", "book-card");
-    bookEl.innerHTML = `
+    let bookCard = document.createElement("div");
+    bookCard.setAttribute("class", "book-card");
+    bookCard.innerHTML = `
     <div class="card-reader">
     <h3 class="title">${book.title}</h3>
     <h5 class=author">by ${book.author}</h5>
@@ -36,7 +36,7 @@ function render() {
     <button class="toggle-read-btn" onClick="toggleRead(${i})">Toggle Read</button>
     </div>
     `;
-    libraryEl.appendChild(bookEl);
+    libraryEl.appendChild(bookCard);
   }
 }
 

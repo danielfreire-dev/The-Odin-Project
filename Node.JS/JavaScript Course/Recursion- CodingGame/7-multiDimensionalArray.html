@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Parse a multi-dimensional array</title>
+	</head>
+	<body>
+		<script>
+			var seven = totalIntegers([[[5], 3], 0, 2, ["foo"], [], [4, [5, 6]]]); // 7
+
+			function totalIntegers(array) {
+				if (array.length === 0) return 0;
+
+				let i = 0;
+				let first = array.shift();
+
+				if (Array.isArray(first)) {
+					i += totalIntegers(first);
+				} else if (Number.isInteger(first)) {
+					i += 1;
+				}
+				return i + totalIntegers(array);
+			}
+
+			console.log(seven);
+		</script>
+	</body>
+</html>

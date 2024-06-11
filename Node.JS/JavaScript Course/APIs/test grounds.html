@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			#search {
+				margin-bottom: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" name="search" id="search" placeholder="Search" />
+		<br />
+		<img src="#" />
+		<br />
+		<button>New Image</button>
+		<script>
+  const img = document.querySelector('img');
+  fetch('https://api.giphy.com/v1/gifs/translate?api_key=uYFTYo1LWdpLXnhxf22iLVv1KagW3pI4&s=cats', {mode: 'cors'})
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      console.log(response);
+    });
+</script>
+	</body>
+</html>

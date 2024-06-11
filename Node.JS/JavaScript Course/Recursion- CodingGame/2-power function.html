@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<title>Power function</title>
+	</head>
+	<body>
+		<header></header>
+		<main></main>
+		<footer></footer>
+		<script>
+			function power(n, exp) {
+				if (exp == 0) {
+					return 1;
+				} else {
+					return n * power(n, exp - 1);
+				}
+			}
+			console.log(power(2, 5));
+		</script>
+	</body>
+</html>

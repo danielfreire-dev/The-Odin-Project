@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<title>Sum all numbers</title>
+	</head>
+	<body>
+		<header></header>
+		<main></main>
+		<footer></footer>
+		<script>
+			function sumRange(n) {
+				if (n == 1) {
+					return 1;
+				} else {
+					/* for (let i = 0; i < n; i++) */
+					return n + sumRange(n - 1);
+				}
+			}
+			console.log(sumRange(100)); // 5050
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<header></header>
+		<main></main>
+		<footer></footer>
+		<script>
+			function productOfArray(arr) {
+				if (Array.isArray(arr)) {
+					if (arr.length == 1) {
+						return arr;
+					} else {
+						/* let finalIndex = arr.at(-1);
+						let arrPop = productOfArray(arr.pop);
+						return finalIndex * arrPop; */
+						return arr.shift() * productOfArray(arr);
+					}
+				} else {
+					console.log("Not an array!");
+				}
+			}
+			console.log(productOfArray([2, 5, 8])); //80
+		</script>
+	</body>
+</html>
